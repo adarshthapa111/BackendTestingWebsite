@@ -2,6 +2,7 @@ const Joi = require('joi');
 
 const featureSchema = Joi.object({
     name: Joi.string().required(),
+    projectId: Joi.string().required(),
     description: Joi.string().min(5).required(),
     icon: Joi.string().required()
 })
@@ -15,4 +16,12 @@ const testCaseSchema = Joi.object({
   status: Joi.string().required(),
 })
 
-module.exports = {featureSchema, testCaseSchema};
+//Validate Project Schema 
+const projectSchema = Joi.object({
+  name: Joi.string().required(),
+  description: Joi.string().min(10).required(),
+  requirement: Joi.string(),
+  icon: Joi.string().required(),
+})
+
+module.exports = {featureSchema, testCaseSchema, projectSchema};

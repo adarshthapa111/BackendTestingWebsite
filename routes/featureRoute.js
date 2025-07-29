@@ -14,6 +14,7 @@ router.post('/', async(req, res) => {
         }
         const feature = new Feature({
             name: req.body.name,
+            projectId: req.body.projectId,
             description: req.body.description,
             icon: req.body.icon,
             createdBy: req.body.createdBy,
